@@ -34,7 +34,7 @@ module.exports = (config) => {
       ],
       sourceMap: false // 'inline'
     },
-    singleRun: false
+    singleRun: true
     // tapReporter: { prettifier: 'tap-spec' }
   });
 };
