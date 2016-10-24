@@ -1,4 +1,5 @@
 const buble = require('rollup-plugin-buble');
+const tapSpec = require('tap-spec');
 
 module.exports = (config) => {
   config.set({
@@ -42,7 +43,7 @@ module.exports = (config) => {
     },
     singleRun: true,
     tapReporter: {
-      prettifier: require('tap-spec')
+      prettify: tapSpec
     }
   });
 };
