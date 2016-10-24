@@ -1,10 +1,15 @@
 # testing karma rollup tape
 
-```
-npm i
-npm t
+```bash
+npm install
+npm run build # browserify tape to build/tape.js 
+npm test # run karma
 ```
 
-```
-21 10 2016 14:09:48.930:ERROR [preprocessor.rollup]: 'default' is not exported by node_modules/tape/index.js (imported by test.js). For help fixing this error see https://github.com/rollup/rollup/wiki/Troubleshooting#name-is-not-exported-by-module
-```
+### Current issue:
+
+- seems as the tests run successfully in the browser but are not reported back to karma, see screenshot:
+![karma browser error](./karma-browser-error.png)
+
+### related
+- rollup can not bundle tape https://github.com/rollup/rollup/issues/1072

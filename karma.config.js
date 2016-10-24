@@ -1,49 +1,40 @@
-const chrome = require('karma-chrome-launcher');
-const rollup = require('karma-rollup-plugin');
 const buble = require('rollup-plugin-buble');
-const nodeResolve = require('rollup-plugin-node-resolve');
-const nodeGlobals = require('rollup-plugin-node-globals');
-const nodeBuiltins = require('rollup-plugin-node-builtins');
-const commonjs = require('rollup-plugin-commonjs');
 
 module.exports = (config) => {
   config.set({
-    client: {
-      captureConsole: true
-    },
+    autoWatch: false,
+    // client: { captureConsole: true },
+    browsers: [ 'Chrome' ],
+    colors: true,
     files: [
+      'build/tape.js',
       'test.js'
     ],
-    // reporters: [ 'dots' ],
+    frameworks: ['tap'],
+    // logLevel: 'LOG_DEBUG',
+    plugins: [
+      'karma-rollup-plugin',
+      'karma-tap',
+      'karma-tap-pretty-reporter',
+      'karma-chrome-launcher'
+    ],
     preprocessors: {
       'test.js': [ 'rollup' ]
     },
-    plugins: [ rollup, chrome ],
-    browsers: [ 'Chrome' ],
-    logLevel: 'LOG_DEBUG',
-    singleRun: true,
-    autoWatch: false,
+    reporters: ['tap-pretty'],
     rollupPreprocessor: {
+      // context: 'this',
+      external: ['tape'],
+      format: 'iife',
+      globals: {
+        'tape': 'tape'
+      },
       plugins: [
-        nodeResolve({
-          jsnext: true,
-          main: true,
-          browser: true
-          // preferBuiltins: false
-        }),
-        nodeGlobals(),
-        nodeBuiltins(),
-        commonjs({
-          include: ['node_modules/tape/**'],
-          namedExports: {
-            'node_modules/tape/index.js': [ 'tape' ]
-          }
-        }),
         buble()
       ],
-      // moduleName: 'foo',
-      format: 'iife',
-      sourceMap: 'inline'
-    }
+      sourceMap: false // 'inline'
+    },
+    singleRun: false
+    // tapReporter: { prettifier: 'tap-spec' }
   });
 };
