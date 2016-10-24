@@ -3,7 +3,7 @@ const tapSpec = require('tap-spec');
 
 module.exports = (config) => {
   config.set({
-    autoWatch: false,
+    autoWatch: true,
     // client: { captureConsole: false },
     browsers: [ 'Chrome' ],
     browserConsoleLogOptions: {
@@ -41,7 +41,7 @@ module.exports = (config) => {
       ],
       sourceMap: false // 'inline'
     },
-    singleRun: true,
+    singleRun: false,
     tapReporter: {
       prettify: tapSpec
     }
