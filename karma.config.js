@@ -3,8 +3,13 @@ const buble = require('rollup-plugin-buble');
 module.exports = (config) => {
   config.set({
     autoWatch: false,
-    // client: { captureConsole: true },
+    // client: { captureConsole: false },
     browsers: [ 'Chrome' ],
+    browserConsoleLogOptions: {
+      level: 'error',
+      format: '%b %T: %m',
+      terminal: false
+    },
     colors: true,
     files: [
       'build/tape.js',
@@ -12,6 +17,7 @@ module.exports = (config) => {
     ],
     frameworks: ['tap'],
     // logLevel: 'LOG_DEBUG',
+    logLevel: config.LOG_ERROR,
     plugins: [
       'karma-rollup-plugin',
       'karma-tap',
@@ -34,7 +40,9 @@ module.exports = (config) => {
       ],
       sourceMap: false // 'inline'
     },
-    singleRun: true
-    // tapReporter: { prettifier: 'tap-spec' }
+    singleRun: true,
+    tapReporter: {
+      prettifier: require('tap-spec')
+    }
   });
 };
