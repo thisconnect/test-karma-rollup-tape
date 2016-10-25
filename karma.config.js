@@ -5,7 +5,7 @@ module.exports = (config) => {
   config.set({
     autoWatch: true,
     // client: { captureConsole: false },
-    browsers: [ 'Chrome' ],
+    browsers: [ 'Chrome', 'Firefox' ],
     browserConsoleLogOptions: {
       level: 'error',
       format: '%b %T: %m',
@@ -23,7 +23,8 @@ module.exports = (config) => {
       'karma-rollup-plugin',
       'karma-tap',
       'karma-tap-pretty-reporter',
-      'karma-chrome-launcher'
+      'karma-chrome-launcher',
+      'karma-firefox-launcher'
     ],
     preprocessors: {
       'test.js': [ 'rollup' ]
