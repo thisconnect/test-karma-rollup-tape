@@ -42,7 +42,7 @@ module.exports = (config) => {
       ],
       sourceMap: false // 'inline'
     },
-    singleRun: false,
+    singleRun: true,
     tapReporter: {
       prettify: tapSpec
     }
