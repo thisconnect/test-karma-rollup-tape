@@ -20,7 +20,7 @@ module.exports = (config) => {
     // logLevel: 'LOG_DEBUG',
     logLevel: config.LOG_ERROR,
     plugins: [
-      'karma-rollup-plugin',
+      'karma-rollup-preprocessor',
       'karma-tap',
       'karma-tap-pretty-reporter',
       'karma-chrome-launcher',
@@ -40,7 +40,7 @@ module.exports = (config) => {
       plugins: [
         buble()
       ],
-      sourceMap: false // 'inline'
+      sourcemap: false // 'inline'
     },
     singleRun: true,
     tapReporter: {
