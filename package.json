@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "build": "browserify ./tape.js --standalone tape -o build/tape.js",
+    "pretest": "npm run build",
     "test": "karma start karma.config.js"
   },
   "author": "",
