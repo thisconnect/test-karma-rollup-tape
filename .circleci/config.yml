@@ -17,10 +17,9 @@ jobs:
     steps:
       - checkout
       - restore-cache: *restore-cache
-      - run: |
-        node --version
-        npm --version
-        npm install
+      - run: node --version
+      - run: npm --version
+      - run: npm install
       - save-cache: *save-cache
       - run: |
         npm test
@@ -31,10 +30,9 @@ jobs:
     steps:
       - checkout
       - restore-cache: *restore-cache
-      - run: |
-        node --version
-        npm --version
-        npm install
+      - run: node --version
+      - run: npm --version
+      - run: npm install
       - save-cache: *save-cache
       - run: |
         npm test
