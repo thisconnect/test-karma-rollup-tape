@@ -1,6 +1,8 @@
 # testing karma rollup tape
 
-[![Dev Dependencies](https://img.shields.io/david/dev/thisconnect/test-karma-rollup-tape.svg?style=flat-square&maxAge=1800)](https://david-dm.org/thisconnect/test-karma-rollup-tape?type=dev)
+[![Build](https://img.shields.io/circleci/project/github/thisconnect/test-karma-rollup-tape.svg?style=flat-square&maxAge=1800)](https://circleci.com/gh/thisconnect/test-karma-rollup-tape)
+[![Dependencies](https://img.shields.io/librariesio/github/thisconnect/test-karma-rollup-tape.svg?style=flat-square&maxAge=1800)](https://libraries.io/github/thisconnect/test-karma-rollup-tape)
+[![devDependencies](https://img.shields.io/david/dev/thisconnect/test-karma-rollup-tape.svg?style=flat-square&maxAge=1800)](https://david-dm.org/thisconnect/test-karma-rollup-tape?type=dev)
 
 
 ```bash
