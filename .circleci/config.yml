@@ -1,45 +1,39 @@
-aliases:
-  - &restore-cache
-    keys:
-      - dependencies-{{ .Branch }}-{{ checksum "package.json" }}
+version: 2.0
 
-  - &save-cache
-    paths:
-      - node_modules
-    key: dependencies-{{ .Branch }}-{{ checksum "package.json" }}
-
-version: 2
 jobs:
-  test-node-6:
-    working_directory: ~/test-karma-rollup-tape-6
+  "node-6":
     docker:
-      - image: circleci/node:6
+      - image: circleci/node:6-browsers
+        environment:
+          CHROME_BIN: "/usr/bin/google-chrome"
+    working_directory: ~/test-karma-rollup-tape
     steps:
       - checkout
-      - restore-cache: *restore-cache
       - run: node --version
       - run: npm --version
       - run: npm install
-      - save-cache: *save-cache
-      - run: |
-        npm test
-  test-node-8:
-    working_directory: ~/test-karma-rollup-tape-8
+      - run:
+          name: Run tests
+          command: npm test
+
+  "node-8":
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:8-browsers
+        environment:
+          CHROME_BIN: "/usr/bin/google-chrome"
+    working_directory: ~/test-karma-rollup-tape
     steps:
       - checkout
-      - restore-cache: *restore-cache
       - run: node --version
       - run: npm --version
       - run: npm install
-      - save-cache: *save-cache
-      - run: |
-        npm test
+      - run:
+          name: Run tests
+          command: npm test
 
 workflows:
   version: 2
-  build-and-deploy:
+  build:
     jobs:
-      - test-node-8
-      - test-node-6
+      - "node-6"
+      - "node-8"
