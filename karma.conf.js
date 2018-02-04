@@ -3,7 +3,7 @@ const tapSpec = require('tap-spec');
 
 module.exports = (config) => {
   config.set({
-    autoWatch: true,
+    autoWatch: false,
     // client: { captureConsole: false },
     browsers: [ 'Chrome', 'Firefox' ],
     browserConsoleLogOptions: {
@@ -13,23 +13,23 @@ module.exports = (config) => {
     },
     colors: true,
     files: [
-      'build/tape.js',
-      'test.js'
+      './build/tape.js',
+      './test.js'
     ],
     frameworks: ['tap'],
     // logLevel: 'LOG_DEBUG',
     logLevel: config.LOG_ERROR,
     plugins: [
       'karma-rollup-preprocessor',
-      'karma-tap',
-      'karma-tap-pretty-reporter',
       'karma-chrome-launcher',
-      'karma-firefox-launcher'
+      'karma-firefox-launcher',
+      'karma-tap'
+      //'karma-tap-pretty-reporter',
     ],
     preprocessors: {
-      'test.js': [ 'rollup' ]
+      './test.js': [ 'rollup' ]
     },
-    reporters: ['tap-pretty'],
+    //reporters: ['tap-pretty'],
     rollupPreprocessor: {
       // context: 'this',
       external: ['tape'],
@@ -44,9 +44,9 @@ module.exports = (config) => {
       ],
       sourcemap: false // 'inline'
     },
-    singleRun: true,
+    singleRun: true/*,
     tapReporter: {
       prettify: tapSpec
-    }
+    }*/
   });
 };

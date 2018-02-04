@@ -7,7 +7,7 @@
   "scripts": {
     "build": "browserify ./tape.js --standalone tape -o build/tape.js",
     "pretest": "npm run build",
-    "test": "karma start karma.config.js"
+    "test": "karma start karma.conf.js"
   },
   "author": "",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "karma-chrome-launcher": "^2.0.0",
     "karma-firefox-launcher": "^1.1.0",
     "karma-rollup-preprocessor": "^5.1.1",
-    "karma-tap": "^4.0.0",
+    "karma-tap": "4.1.0",
     "karma-tap-pretty-reporter": "^3.0.5",
     "rollup": "^0.55.0",
     "rollup-plugin-buble": "^0.18.0",
