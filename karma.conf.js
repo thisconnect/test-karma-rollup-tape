@@ -23,13 +23,13 @@ module.exports = (config) => {
       'karma-rollup-preprocessor',
       'karma-chrome-launcher',
       'karma-firefox-launcher',
-      'karma-tap'
-      // 'karma-tap-pretty-reporter'
+      'karma-tap',
+      'karma-tap-pretty-reporter'
     ],
     preprocessors: {
       './test.js': [ 'rollup' ]
     },
-    //reporters: ['tap-pretty'],
+    reporters: ['tap-pretty'],
     rollupPreprocessor: {
       // context: 'this',
       external: ['tape'],
@@ -44,9 +44,9 @@ module.exports = (config) => {
       ],
       sourcemap: false // 'inline'
     },
-    singleRun: true/*,
+    singleRun: true,
     tapReporter: {
       prettify: tapSpec
-    }*/
+    }
   });
 };
