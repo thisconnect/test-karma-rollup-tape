@@ -18,7 +18,7 @@
     "karma-firefox-launcher": "^1.1.0",
     "karma-rollup-preprocessor": "^5.1.1",
     "karma-tap": "4.1.1",
-    "karma-tap-pretty-reporter": "^3.0.5",
+    "karma-tap-pretty-reporter": "^4.0.0",
     "rollup": "^0.55.0",
     "rollup-plugin-buble": "^0.18.0",
     "rollup-plugin-commonjs": "^8.2.6",
