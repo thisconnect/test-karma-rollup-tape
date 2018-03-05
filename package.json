@@ -21,7 +21,7 @@
     "karma-tap-pretty-reporter": "^4.0.0",
     "rollup": "^0.56.0",
     "rollup-plugin-buble": "^0.19.1",
-    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-commonjs": "^9.0.0",
     "rollup-plugin-node-builtins": "^2.0.0",
     "rollup-plugin-node-globals": "^1.1.0",
     "rollup-plugin-node-resolve": "^3.0.2",
