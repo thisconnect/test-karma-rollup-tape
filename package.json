@@ -24,7 +24,7 @@
     "rollup-plugin-commonjs": "^9.0.0",
     "rollup-plugin-node-builtins": "^2.0.0",
     "rollup-plugin-node-globals": "^1.1.0",
-    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-node-resolve": "^3.2.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.3"
   }
