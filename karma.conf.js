@@ -37,12 +37,12 @@ module.exports = (config) => {
         format: 'iife',
         globals: {
           'tape': 'tape'
-        }
+        },
+        sourcemap: false // 'inline'
       },
       plugins: [
         buble()
-      ],
-      sourcemap: false // 'inline'
+      ]
     },
     singleRun: true,
     tapReporter: {
