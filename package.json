@@ -16,7 +16,7 @@
     "karma": "^4.0.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-firefox-launcher": "^1.1.0",
-    "karma-rollup-preprocessor": "^6.0.0",
+    "karma-rollup-preprocessor": "^7.0.0",
     "karma-tap": "4.1.4",
     "karma-tap-pretty-reporter": "^4.0.0",
     "rollup": "^0.68.0",
