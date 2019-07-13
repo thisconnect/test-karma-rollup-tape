@@ -16,9 +16,9 @@ jobs:
           name: Run tests
           command: npm test
 
-  "node-8":
+  "node-12":
     docker:
-      - image: circleci/node:8-browsers
+      - image: circleci/node:12-browsers
         environment:
           CHROME_BIN: "/usr/bin/google-chrome"
     working_directory: ~/test-karma-rollup-tape
@@ -36,4 +36,4 @@ workflows:
   build:
     jobs:
       - "node-10"
-      - "node-8"
+      - "node-12"
